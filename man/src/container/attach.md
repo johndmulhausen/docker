@@ -13,7 +13,7 @@ file. See **config-json(5)** for documentation on using a configuration file.
 It is forbidden to redirect the standard input of a `docker attach` command while
 attaching to a tty-enabled container (i.e.: launched with `-t`).
 
-# Override the detach sequence
+## Override the detach sequence
 
 If you want, you can configure an override the Docker key sequence for detach.
 This is useful if the Docker default sequence conflicts with key sequence you
@@ -37,16 +37,16 @@ These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
 sequences. To configure a different configuration default key sequence for all
 containers, see **docker(1)**.
 
-# EXAMPLES
+## Examples
 
-## Attaching to a container
+### Attaching to a container
 
 In this example the top command is run inside a container, from an image called
 fedora, in detached mode. The ID from the container is passed into the **docker
 attach** command:
 
-    # ID=$(sudo docker run -d fedora /usr/bin/top -b)
-    # sudo docker attach $ID
+    $ ID=$(sudo docker run -d fedora /usr/bin/top -b)
+    $ sudo docker attach $ID
     top - 02:05:52 up  3:05,  0 users,  load average: 0.01, 0.02, 0.05
     Tasks:   1 total,   1 running,   0 sleeping,   0 stopped,   0 zombie
     Cpu(s):  0.1%us,  0.2%sy,  0.0%ni, 99.7%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
